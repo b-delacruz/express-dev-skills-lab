@@ -7,8 +7,15 @@
   <title>Skills</title>
 </head>
 <body>
-  <h1><%= name %></h1>
+  <h1>Skills</h1>
   <!-- Add this line -->
-  <a href="/skills">To-Do List</a>
+  <a href="/skills">Here are my skills</a>
+    <ul>
+      <% skills.forEach(skills => { %>
+        <li> 
+          <%- skills.name %>
+        </li>
+        <% }) %>  
+    </ul>
 </body>
 </html>
