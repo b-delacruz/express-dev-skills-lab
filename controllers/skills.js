@@ -19,17 +19,19 @@ function newSkill(req,res) {
 }
 
 function create(req,res) {
-  // Skill.create(req.body)
-  // .then(skill => {
-    
-  //   res.redirect('/skills')
-  // })
-  // .catch(error => { 
-  //   console.log(error)
-  //   res.redirect('/')
-  // })
-
+  Skill.create(req.body)
+  .then((skill) => {
+    res.redirect('/skills')
+  })
+  .catch(error => { 
+    console.log(error)
+    res.redirect('/')
+  })
 }
+ 
+
+
+
 
 function show(req, res) {
   Skill.findById(req.params.id)
