@@ -21,7 +21,7 @@ function newSkill(req,res) {
 function create(req,res) {
   Skill.create(req.body)
   .then((skill) => {
-    res.redirect('/skills')
+    res.redirect('/thanks')
   })
   .catch(error => { 
     console.log(error)
