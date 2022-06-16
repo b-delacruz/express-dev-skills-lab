@@ -8,7 +8,7 @@
 </head>
 <body>
   <h1>Skills</h1>
-  
+
   <a href="/skills/new">Create new skills</a>
     <ul>
       <% skills.forEach(skills => { %>
@@ -17,5 +17,13 @@
         </li>
         <% }) %>  
     </ul>
+
+    <ul>
+      <% skills.forEach(function(skill) { %> 
+        <li>
+          <a href="/skills/<%= skill._id %>"><%= skill.text %></a>
+        </li>
+      <% }) %> 
+    </ul>    
 </body>
 </html>
