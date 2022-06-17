@@ -2,8 +2,6 @@ import { Skill } from '../models/skills.js'
 
 
 function index(req, res) {
-  console.log(req.time) 
-  console.log(req.muffin)
   Skill.find({})
   .then(skills => {
     res.render('skills/index',{

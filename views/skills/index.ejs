@@ -8,23 +8,23 @@
 </head>
 <body>
   <h1>Skills</h1>
-  <h1><%= time %></h1>
+  <!-- Add this line -->
   <a href="/skills/new">Create new skills</a>
-    <ul>
-      <% skills.forEach(skill => { %>
-        <li> 
-          <form 
-            action="/skills/<%= skill._id %>?_method=DELETE" 
-            class="delete-form" 
-            method="POST"
-          >
-            <button type="submit">X</button>
-          </form>
-          <a href="/skills/<%= skill._id %>"><%- skills.text %></a> 
-
-        </li>
-        <% }) %>  
-    </ul>
-    
+  
+  <ul>
+    <% skills.forEach(function(skill) { %>
+      <li>
+        <form 
+          action="/skills/<%= skill._id %>?_method=DELETE"
+          class="delete-form"
+          method="POST"
+        >
+        <button type="submit">X</button>
+        </form>
+        <a href="/skills/<%= skill._id %>"><%= skill.text %></a>
+      </li>
+    <% }) %>  
+  </ul>
+     
 </body>
 </html>

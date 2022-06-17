@@ -10,6 +10,7 @@ a {
 .delete-form {
   display: inline-block;
   margin-right: 10px;
+  color: red;
 }
 	
 .delete-form button {
@@ -18,4 +19,5 @@ a {
 	
 li {
   list-style: none;
+  background-color: red;
 }
