@@ -1,11 +1,17 @@
 import { Skill } from '../models/skills.js'
 
+// function times(req, res) {
+  
+// }
 
 function index(req, res) {
+  console.log(req.time) 
+  console.log(req.muffin)
   Skill.find({})
   .then(skills => {
     res.render('skills/index',{
-      skills: skills
+      skills: skills,
+      time: req.time
     })
   })
   .catch(error => { 
@@ -29,10 +35,6 @@ function create(req,res) {
   })
 }
  
-
-
-
-
 function show(req, res) {
   Skill.findById(req.params.id)
   .then(skill => {
