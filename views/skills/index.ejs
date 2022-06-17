@@ -11,19 +11,20 @@
   <h1><%= time %></h1>
   <a href="/skills/new">Create new skills</a>
     <ul>
-      <% skills.forEach(skills => { %>
+      <% skills.forEach(skill => { %>
         <li> 
-          <%- skills.name %>
+          <form 
+            action="/skills/<%= skill._id %>?_method=DELETE" 
+            class="delete-form" 
+            method="POST"
+          >
+            <button type="submit">X</button>
+          </form>
+          <a href="/skills/<%= skill._id %>"><%- skills.text %></a> 
+
         </li>
         <% }) %>  
     </ul>
-
-    <ul>
-      <% skills.forEach(function(skill) { %> 
-        <li>
-          <a href="/skills/<%= skill._id %>"><%= skill.text %></a>
-        </li>
-      <% }) %> 
-    </ul>    
+    
 </body>
 </html>

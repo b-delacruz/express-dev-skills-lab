@@ -1,8 +1,5 @@
 import { Skill } from '../models/skills.js'
 
-// function times(req, res) {
-  
-// }
 
 function index(req, res) {
   console.log(req.time) 
@@ -48,9 +45,21 @@ function show(req, res) {
   })
 }
 
+function deleteSkill(req, res) {
+  Skill.findByIdAndDelete(req.params.id)
+  .then(skill => {
+    res.redirect('/skills')
+  })
+  .catch(error => { 
+    console.log(error)
+    res.redirect('/')
+  })
+}
+
 export {
   index,
+  show,
   newSkill as new,
   create,
-  show,
+  deleteSkill as delete,
 }

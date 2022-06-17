@@ -11,7 +11,10 @@ router.get('/', function(req, res) {
 })
 
 router.get('/thanks', function(req, res) {
-  res.render('index', { title: 'Thanks :) ' })
+  res.render('index', { 
+    title: 'Thanks :) ',
+    time: req.time,
+  })
 })
 
 
